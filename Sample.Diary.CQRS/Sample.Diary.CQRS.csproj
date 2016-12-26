@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>465ca71e-976b-492e-aaa1-4ed61f2eaeef</ProjectGuid>
+    <ProjectGuid>{465CA71E-976B-492E-AAA1-4ED61F2EAEEF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sample.Diary.CQRS</RootNamespace>
@@ -30,24 +30,69 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="StructureMap, Version=4.4.2.472, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.4.2\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CommandHandlers\ChangeItemCommandHandler.cs" />
+    <Compile Include="CommandHandlers\CreateItemCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteItemCommandHandler.cs" />
+    <Compile Include="CommandHandlers\ICommandHandler.cs" />
+    <Compile Include="Commands\ChangeItemCommand.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CreateItemCommand.cs" />
+    <Compile Include="Commands\DeleteItemCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Domain\AggregateRoot.cs" />
+    <Compile Include="Domain\DiaryItem.cs" />
+    <Compile Include="Domain\IEventProvider.cs" />
+    <Compile Include="Domain\Mementos\BaseMemento.cs" />
+    <Compile Include="Domain\Mementos\DiaryItemMemento.cs" />
+    <Compile Include="EventHandlers\IEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemCreatedEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemDeletedEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemDescriptionChangedEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemFromChangedEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemRenamedEventHandler.cs" />
+    <Compile Include="EventHandlers\ItemToChangedEventHandler.cs" />
+    <Compile Include="Events\Event.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IHandle.cs" />
+    <Compile Include="Events\ItemCreatedEvent.cs" />
+    <Compile Include="Events\ItemDeletedEvent.cs" />
+    <Compile Include="Events\ItemDescriptionChangedEvent.cs" />
+    <Compile Include="Events\ItemFromChangedEvent.cs" />
+    <Compile Include="Events\ItemRenamedEvent.cs" />
+    <Compile Include="Events\ItemToChangedEvent.cs" />
+    <Compile Include="Messaging\CommandBus.cs" />
+    <Compile Include="Messaging\EventBus.cs" />
+    <Compile Include="Messaging\ICommandBus.cs" />
+    <Compile Include="Messaging\IEventBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\DiaryItemDto.cs" />
+    <Compile Include="Reporting\IReportDatabase.cs" />
+    <Compile Include="Storage\IEventStorage.cs" />
+    <Compile Include="Storage\InMemoryEventStorage.cs" />
+    <Compile Include="Storage\IRepository.cs" />
+    <Compile Include="Storage\Memento\IOriginator.cs" />
+    <Compile Include="Storage\Repository.cs" />
+    <Compile Include="Utils\Converter.cs" />
+    <Compile Include="Utils\ICommandHandlerFactory.cs" />
+    <Compile Include="Utils\IEventHandlerFactory.cs" />
+    <Compile Include="Utils\StructureMapCommandHandlerFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -57,5 +102,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-
- </Project>
+</Project>

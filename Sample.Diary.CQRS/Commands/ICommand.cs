@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Diary.CQRS.Configuration
+namespace Sample.Diary.CQRS.Commands
 {
-    public class Class1
+    public interface ICommand
     {
+        Guid Id { get;}
     }
 }

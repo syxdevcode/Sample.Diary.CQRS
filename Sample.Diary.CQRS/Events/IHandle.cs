@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Diary.CQRS.Domain
+namespace Sample.Diary.CQRS.Events
 {
-    public class Class1
+   public interface IHandle<TEvent>where TEvent:Event
     {
+        void Handle(TEvent e);
     }
 }

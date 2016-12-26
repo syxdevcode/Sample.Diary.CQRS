@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Diary.CQRS
+namespace Sample.Diary.CQRS.Events
 {
-    public class Class1
+    public interface IEvent
     {
+        Guid Id { get; }
     }
 }
