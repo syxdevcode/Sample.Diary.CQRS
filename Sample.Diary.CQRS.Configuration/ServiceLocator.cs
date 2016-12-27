@@ -53,7 +53,6 @@ namespace Sample.Diary.CQRS.Configuration
             {
                 x.For(typeof(IRepository<>)).Singleton().Use(typeof(Repository<>));
                 x.For<IEventStorage>().Singleton().Use<InMemoryEventStorage>();
-                x.For<IEventBus>().Use<EventBus>();
                 x.For<ICommandHandlerFactory>().Use<StructureMapCommandHandlerFactory>();
                 x.For<IEventHandlerFactory>().Use<StructureMapEventHandlerFactory>();
                 x.For<ICommandBus>().Use<CommandBus>();
