@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap, Version=4.4.2.472, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StructureMap.4.4.2\lib\net45\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -81,6 +81,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reporting\DiaryItemDto.cs" />
     <Compile Include="Reporting\IReportDatabase.cs" />
+    <Compile Include="Reporting\ReportDatabase.cs" />
     <Compile Include="Storage\IEventStorage.cs" />
     <Compile Include="Storage\InMemoryEventStorage.cs" />
     <Compile Include="Storage\IRepository.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Utils\ICommandHandlerFactory.cs" />
     <Compile Include="Utils\IEventHandlerFactory.cs" />
     <Compile Include="Utils\StructureMapCommandHandlerFactory.cs" />
+    <Compile Include="Utils\StructureMapEventHandlerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
