@@ -4,6 +4,7 @@ using Sample.Diary.CQRS.Events;
 using Sample.Diary.CQRS.Storage.Memento;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,8 @@ namespace Sample.Diary.CQRS.Storage
                         item = GetById(aggregate.Id);
                         if (item.Version != expectedVersion)
                         {
-                            throw new Exception();
+                            throw new DBConcurrencyException(string.Format("Aggregate {0} has been previously modified",
+                                                                        item.Id));
                         }
                     }
                     _eventStorage.Save(aggregate);

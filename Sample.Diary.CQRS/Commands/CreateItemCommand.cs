@@ -22,7 +22,7 @@ namespace Sample.Diary.CQRS.Commands
             Title = title;
             Description = description;
             From = from;
-            To = To;
+            To = to;
         }
     }
 }
