@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(Sample.Diary.CQRS.Web.Startup))]
+
 namespace Sample.Diary.CQRS.Web
 {
     public partial class Startup

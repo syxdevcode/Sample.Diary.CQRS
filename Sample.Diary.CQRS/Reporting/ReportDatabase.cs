@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.Reporting
 {
-    public class ReportDatabase:IReportDatabase
+    public class ReportDatabase : IReportDatabase
     {
-        static readonly List<DiaryItemDto> items = new List<DiaryItemDto>();
+        private static readonly List<DiaryItemDto> items = new List<DiaryItemDto>();
 
         public DiaryItemDto GetById(Guid id)
         {

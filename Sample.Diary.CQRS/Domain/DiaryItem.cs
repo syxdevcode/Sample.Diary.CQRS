@@ -2,26 +2,23 @@
 using Sample.Diary.CQRS.Events;
 using Sample.Diary.CQRS.Storage.Memento;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.Domain
 {
-    public class DiaryItem : AggregateRoot,IHandle<ItemCreatedEvent>,
-        IHandle<ItemRenamedEvent>,IHandle<ItemFromChangedEvent>,IHandle<ItemToChangedEvent>
-        ,IHandle<ItemDescriptionChangedEvent>, IOriginator
+    public class DiaryItem : AggregateRoot, IHandle<ItemCreatedEvent>,
+        IHandle<ItemRenamedEvent>, IHandle<ItemFromChangedEvent>, IHandle<ItemToChangedEvent>
+        , IHandle<ItemDescriptionChangedEvent>, IOriginator
     {
         public string Title { get; set; }
 
         public DateTime From { get; set; }
+
         public DateTime To { get; set; }
+
         public string Description { get; set; }
 
         public DiaryItem()
         {
-
         }
 
         public DiaryItem(Guid id, string title, string description, DateTime from, DateTime to)
@@ -56,7 +53,6 @@ namespace Sample.Diary.CQRS.Domain
 
         public void Handle(ItemDeletedEvent e)
         {
-
         }
 
         public void Handle(ItemCreatedEvent e)
@@ -68,7 +64,6 @@ namespace Sample.Diary.CQRS.Domain
             Description = e.Description;
             Version = e.Version;
         }
-
 
         public void Handle(ItemRenamedEvent e)
         {

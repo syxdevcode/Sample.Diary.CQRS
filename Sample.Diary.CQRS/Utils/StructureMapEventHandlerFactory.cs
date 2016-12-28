@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sample.Diary.CQRS.EventHandlers;
+﻿using Sample.Diary.CQRS.EventHandlers;
 using Sample.Diary.CQRS.Events;
 using StructureMap;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Sample.Diary.CQRS.Utils
 {
@@ -19,7 +17,7 @@ namespace Sample.Diary.CQRS.Utils
             return lstHandlers;
         }
 
-        private static IEnumerable<Type> GetHandlerType<T>()where T:Event
+        private static IEnumerable<Type> GetHandlerType<T>() where T : Event
         {
             var handlers = typeof(IEventHandler<>).Assembly.GetExportedTypes()
                 .Where(x => x.GetInterfaces()

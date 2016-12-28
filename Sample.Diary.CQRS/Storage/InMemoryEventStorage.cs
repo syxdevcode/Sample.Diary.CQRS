@@ -1,14 +1,12 @@
-﻿using Sample.Diary.CQRS.Domain.Mementos;
+﻿using Sample.Diary.CQRS.Domain;
+using Sample.Diary.CQRS.Domain.Mementos;
 using Sample.Diary.CQRS.Events;
 using Sample.Diary.CQRS.Messaging;
+using Sample.Diary.CQRS.Storage.Memento;
+using Sample.Diary.CQRS.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sample.Diary.CQRS.Domain;
-using Sample.Diary.CQRS.Storage.Memento;
-using Sample.Diary.CQRS.Utils;
 
 namespace Sample.Diary.CQRS.Storage
 {
@@ -36,7 +34,6 @@ namespace Sample.Diary.CQRS.Storage
                 throw new Exception();
             }
             return events;
-
         }
 
         public void Save(AggregateRoot aggregate)
@@ -65,7 +62,6 @@ namespace Sample.Diary.CQRS.Storage
                 var desEvent = Converter.ChangeTo(@event, @event.GetType());
                 _eventBus.Publish(desEvent);
             }
-
         }
 
         public T GetMemento<T>(Guid aggregateId) where T : BaseMemento

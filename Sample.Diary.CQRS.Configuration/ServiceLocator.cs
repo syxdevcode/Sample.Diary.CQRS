@@ -3,11 +3,6 @@ using Sample.Diary.CQRS.Reporting;
 using Sample.Diary.CQRS.Storage;
 using Sample.Diary.CQRS.Utils;
 using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.Configuration
 {
@@ -41,9 +36,7 @@ namespace Sample.Diary.CQRS.Configuration
         {
             get { return _reportDatabase; }
         }
-
     }
-
 
     public class ContainerBootstrapper
     {

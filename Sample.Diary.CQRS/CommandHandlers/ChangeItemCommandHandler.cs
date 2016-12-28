@@ -2,10 +2,6 @@
 using Sample.Diary.CQRS.Domain;
 using Sample.Diary.CQRS.Storage;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.CommandHandlers
 {
@@ -34,7 +30,6 @@ namespace Sample.Diary.CQRS.CommandHandlers
             if (aggregate.Title != command.Title)
                 aggregate.ChangeTitle(command.Title);
 
-
             if (aggregate.Description != command.Description)
                 aggregate.ChangeDescription(command.Description);
 
@@ -46,6 +41,5 @@ namespace Sample.Diary.CQRS.CommandHandlers
 
             _repository.Save(aggregate, command.Version);
         }
-
     }
 }

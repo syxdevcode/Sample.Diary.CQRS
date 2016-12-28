@@ -1,11 +1,9 @@
 ﻿using Sample.Diary.CQRS.CommandHandlers;
 using Sample.Diary.CQRS.Commands;
+using StructureMap;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StructureMap;
 
 namespace Sample.Diary.CQRS.Utils
 {

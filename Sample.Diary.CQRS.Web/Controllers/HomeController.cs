@@ -2,9 +2,6 @@
 using Sample.Diary.CQRS.Configuration;
 using Sample.Diary.CQRS.Reporting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Sample.Diary.CQRS.Web.Controllers

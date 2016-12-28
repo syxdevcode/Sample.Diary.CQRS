@@ -1,14 +1,9 @@
 ﻿using Sample.Diary.CQRS.Events;
 using Sample.Diary.CQRS.Reporting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.EventHandlers
 {
-    public class ItemCreatedEventHandler:IEventHandler<ItemCreatedEvent>
+    public class ItemCreatedEventHandler : IEventHandler<ItemCreatedEvent>
     {
         private readonly IReportDatabase _reportDatabase;
 

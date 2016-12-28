@@ -1,10 +1,5 @@
 ﻿using Sample.Diary.CQRS.Events;
 using Sample.Diary.CQRS.Reporting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sample.Diary.CQRS.EventHandlers
 {
@@ -23,6 +18,5 @@ namespace Sample.Diary.CQRS.EventHandlers
             item.To = e.To;
             item.Version = e.Version;
         }
-
     }
 }
