@@ -49,8 +49,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="StructureMap, Version=2.6.4.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
-      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=4.4.2.472, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.4.2\lib\net45\StructureMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -228,10 +228,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sample.Diary.CQRS.Configuration\Sample.Diary.CQRS.Configuration.csproj">
-      <Project>{cafb9cac-cbf2-4307-8c09-7cd317356438}</Project>
-      <Name>Sample.Diary.CQRS.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Sample.Diary.CQRS\Sample.Diary.CQRS.csproj">
       <Project>{465ca71e-976b-492e-aaa1-4ed61f2eaeef}</Project>
       <Name>Sample.Diary.CQRS</Name>

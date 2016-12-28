@@ -14,7 +14,7 @@ namespace Sample.Diary.CQRS.Utils
             var handlers = GetHandlerTypes<T>().ToList();
 
             var cmdHandler = handlers.Select(handler =>
-                (ICommandHandler<T>)ObjectFactory.GetInstance(handler)).FirstOrDefault();
+                (ICommandHandler<T>)IocContainer.Default.GetInstance(handler)).FirstOrDefault();
 
             return cmdHandler;
         }

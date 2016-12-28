@@ -13,7 +13,7 @@ namespace Sample.Diary.CQRS.Utils
         {
             var handlers = GetHandlerType<T>();
 
-            var lstHandlers = handlers.Select(handler => (IEventHandler<T>)ObjectFactory.GetInstance(handler)).ToList();
+            var lstHandlers = handlers.Select(handler => (IEventHandler<T>)IocContainer.Default.GetInstance(handler)).ToList();
             return lstHandlers;
         }
 
