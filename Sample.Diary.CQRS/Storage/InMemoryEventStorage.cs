@@ -46,6 +46,7 @@ namespace Sample.Diary.CQRS.Storage
                 version++;
                 if (version > 2)
                 {
+                    // 生成快照
                     if (version % 3 == 0)
                     {
                         var originator = (IOriginator)aggregate;

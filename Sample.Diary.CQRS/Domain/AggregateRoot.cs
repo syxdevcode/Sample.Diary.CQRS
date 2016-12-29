@@ -45,6 +45,8 @@ namespace Sample.Diary.CQRS.Domain
         protected void ApplyChange(Event @event, bool isNew)
         {
             dynamic d = this;
+
+            //this指DiayItem对象，Handle方法为DiayItem对象定义的Handle方法
             d.Handle(Converter.ChangeTo(@event, @event.GetType()));
             if (isNew)
             {
