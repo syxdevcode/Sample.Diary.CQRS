@@ -50,7 +50,7 @@ namespace Sample.Diary.CQRS.Utils
     {
         public static void BootstrapStructureMap()
         {
-            IocContainer.Default = new Container(x =>
+            IocContainer.Default.Configure(x =>
             {
                 x.For(typeof(IRepository<>)).Singleton().Use(typeof(Repository<>));
                 x.For<IEventStorage>().Singleton().Use<InMemoryEventStorage>();
